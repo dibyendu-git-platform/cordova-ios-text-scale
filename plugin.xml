@@ -1,15 +1,22 @@
-<?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-text-scale-plugin" version="1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>text-scale-ios</name>
-    <js-module name="text-scale-ios" src="www/text-scale-ios.js">
-        <clobbers target="cordova.plugins.text-scale-ios" />
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-textscale"
+        version="1.0.0">
+    <name>TextScalePlugin</name>
+    <description>Cordova Plugin to get iOS text scale</description>
+    <license>MIT</license>
+    <keywords>cordova,ios,text,scale,accessibility</keywords>
+    <js-module name="TextScalePlugin" src="www/TextScalePlugin.js">
+        <clobbers target="TextScalePlugin" />
     </js-module>
     <platform name="ios">
-        <config-file parent="/*" target="config.xml">
-            <feature name="text-scale-ios">
-                <param name="ios-package" value="text-scale-ios" />
+        <config-file target="config.xml" parent="/*">
+            <feature name="TextScalePlugin">
+                <param name="ios-package" value="TextScalePlugin" />
             </feature>
         </config-file>
-        <source-file src="src/ios/text-scale-ios.m" />
+        <source-file src="src/ios/TextScalePlugin.h" />
+        <source-file src="src/ios/TextScalePlugin.m" />
+        <preference name="deployment-target" value="11.0" />
     </platform>
 </plugin>
